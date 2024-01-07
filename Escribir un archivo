@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+// escribir en un archivo 
+
+int main() {
+  FILE *Archivo = fopen("prueba1.txt", "a");
+  
+  
+  if(Archivo==NULL){
+    printf("Error al intentar crear/acceder al archivo\n");
+  }else{
+    char letra;
+    while((letra = getchar()) !='\n'){
+      fputc(letra,Archivo);
+    }
+  }
+  return 0;
+}
